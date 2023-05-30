@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io"
 import "./App.css"
 const listOption = [
   "Select an option",
@@ -61,16 +62,27 @@ const CustomSelect = () => {
     <div className="custom-select">
       <label>
         Dropdown Menu
-        <select
-          name="sample"
-          className="dropdown-list"
-          ref={dropDownList}
-          onMouseDown={handleClick}
-        >
-          {listOption.map((option) => (
-            <option key={option}>{option}</option>
-          ))}
-        </select>
+        <div className="select-input">
+          <select
+            name="sample"
+            className="dropdown-list"
+            ref={dropDownList}
+            onMouseDown={handleClick}
+          >
+            {listOption.map((option) => (
+              <option key={option}>{option}</option>
+            ))}
+          </select>
+          {isDropdownOpen ? (
+            <span>
+              <IoIosArrowUp onClick={handleClick} />
+            </span>
+          ) : (
+            <span>
+              <IoIosArrowDown onClick={handleClick} />
+            </span>
+          )}
+        </div>
         {isDropdownOpen && (
           <div className="custom-dropdown">
             <div className="custom-dropdown__outer-container">
