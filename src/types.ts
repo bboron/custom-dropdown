@@ -1,6 +1,3 @@
+import { DropdownProps } from "./Components/Dropdown/types";
 
-interface listOption {
-    id: string;
-    label: string;
-  }
-  export type { listOption };
+export type { DropdownProps };

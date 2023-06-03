@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
-import CustomDropdown from "./CustomDropdown"
+import DropdownList from "./Components/Dropdown"
 
 const listOption = [
   { id: "ID_1", label: "Option 1" },
@@ -14,7 +13,10 @@ const listOption = [
 ]
 
 const App = () => {
-  return <CustomDropdown listOption={listOption} />
+  const selectedValue = (value: string) => {
+    console.log(value, "from App.tsx")
+  }
+  return <DropdownList listOption={listOption} selectedValue={selectedValue} />
 }
 
 export default App
